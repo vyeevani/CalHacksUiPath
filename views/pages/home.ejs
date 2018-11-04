@@ -15,11 +15,14 @@ window.addEventListener("load",function() {
 	});});
 </script>
 
+<style>
+	@import url(https://fonts.googleapis.com/css?family=Lato:100);
+</style>
 <body ng-app="app" ng-controller="homePageController">
-<p style="color: white; font-size: 70px; margin:0px; margin-bottom: 2vh; margin-top: 2vh; font-family: 'Permanent Marker', cursive;">RISE & SHINE</p>
+<p style="color: white; font-size: 100px; margin:0px; margin-top: 2vh; font-family:'Josefin Sans', sans-serif;">RISE & SHINE</p>
 <div class="container-fluid">
 	<div class="row">
-		<div class="card" style="margin-left: 5vw; width: 90vw; margin-top:2vh; background-color: rgba(255, 255, 255, 0.5);">
+		<div class="card" style="margin-left: 5vw; width: 90vw; background-color: rgba(255, 255, 255, 0.5);">
 			<div class="card-body">
 				<div class="container-fluid">
 					<div class="row">
@@ -69,38 +72,38 @@ window.addEventListener("load",function() {
 								</div>
 							</div>
 						</div>
-						<div class="col-xs-5">
-							<p style="color: white; font-size: 70px; text-align:justify; margin:0px;">{{weather.city}}</p>
+						<div class="col-xs-4">
+							<p style="color: white; font-size: 70px; text-align:justify; margin:0px; margin-top:1vh;">{{weather.city}}</p>
 							<p style="color: white; font-size: 30px; text-align:justify; margin:0px;">{{weather.forecast}}</p>
-							<p style="color: white; font-size: 30px; text-align:justify; margin:0px;">Chance of rain (%): {{weather.precip}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify; margin:0px;">Chance of rain: {{weather.precip}}</p>
 							<p style="color: white; font-size: 30px; text-align:justify; margin:0px;">Wind: {{weather.wind}}</p>
 						</div>
-						<div class="col-xs-3">
-							<p style="color: white; font-size: 135px; margin-top:3vh">{{weather.temp}}</p>
+						<div class="col-xs-4">
+							<p style="color: white; font-size: 135px; margin-top:3vh; text-align:center;">{{weather.temp}}</p>
 						</div>
 					</div>
 					<div class="row">
-						<p class="card-text" style="color: white; margin-top: 2vh; margin-bottom: 2vh; font-size: 30px"> Its cloudy dress warmly you dumb whore. {{weather.message}}</p>
+						<p class="card-text" style="color: white; margin-top: 0px; margin-bottom: 2vh; font-size: 30px">{{weather.message}}</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<hr style = "margin-left: 3.5vw; width: 90vw; background-color: rgba(255, 255, 255, 0.5); margin-bottom: 2vh;">
-	<div id="" style="overflow-y:scroll; overflow-x:visible; height:600px; margin-bottom:2vh;">
+	<div id="" style="overflow-y:scroll; overflow-x:visible; height:650px; margin-bottom:2vh;">
 		<div class="row" ng-repeat="email in emails">
 			<div class="card" style="margin-left: 5vw; width: 90vw; background-color: rgba(255, 255, 255, 0.5);" >
 				<div class="card-body">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-xs-8">
-								<p style="color: white; font-size: 40px; text-align:justify; margin:13px;"><span style="font-size:20px">From: </span>{{email.sender}}</p>
+								<p style="color: white; font-size: 40px; text-align:justify; margin:13px;"><span style="font-size:30px; margin-right: 0px;">From:</span> {{email.sender}}</p>
 							</div>
 							<div class="col-xs-4">
-								<p style="color: white; font-size: 40px; text-align:justify; margin:13px;"><span style="font-size:20px">Time: </span>{{email.time}}</p>
+								<p style="color: white; font-size: 40px;text-align:right; margin:13px;">{{email.time}}</p>
 							</div>
-							<p style="color: white; font-size: 30px; text-align:justify; margin:30px; margin-top: 0px;"><span style="font-size:20px">Subject: </span>{{email.subj}}</p>
-							<p style="color: white; font-size: 20px; text-align:justify; margin:30px;">{{email.body}}</p>
+							<p style="color: white; font-size: 40px; text-align:justify; margin:30px; margin-top: 0px;"><span style="font-size:20px; margin-right: 10px;">Subject: </span>{{email.subj}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify; margin:30px;">{{email.body}}</p>
 						</div>
 					</div>
 				</div>
@@ -114,7 +117,15 @@ window.addEventListener("load",function() {
 				<div class="card-body">
 					<div class="container-fluid">
 						<div class="row">
-							<p style="color: white; font-size: 50px; text-align:justify; margin:40px; margin-top: 0px;">{{todo}}</p>
+							<div class="col-xs-4">
+								<p style="color: white; font-size: 40px; text-align:justify; margin:13px;"> {{todo.name}}</p>
+							</div>
+							<div class="col-xs-2">
+								<p style="color: white; font-size: 20px; text-align:right; margin-top:35px;">Time:</p>
+							</div>
+							<div class="col-xs-6">
+								<p style="color: white; font-size: 40px;text-align:right; margin:13px;">{{todo.time}}</p>
+							</div>
 						</div>
 					</div>
 				</div>
