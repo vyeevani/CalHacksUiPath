@@ -4,6 +4,7 @@
   "description": "A simple weather/text information application based of UIPath weather reading and reporting",
   "main": "index.js",
   "scripts": {
+    "start": "source setup.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vineeth Yeevani",
