@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+	<% include ../partials/stylesheets %>
+	<% include ../partials/scripts %>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+
+<script>
+
+window.addEventListener("load",function() {
+	$( document ).ready(function() {
+	  window.scrollTo(0, 1);
+	});});
+</script>
+
+<body ng-app="app" ng-controller="homePageController">
+<div class="container-fluid">
+	<div class="row">
+		<div class="card" style="margin-left: 5vw; width: 90vw; margin-top:2vh; background-color: rgba(255, 255, 255, 0.5);">
+			<div class="card-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-6">
+							<div ng-switch="weather.icon" style="margin-top:4vh;">
+								<div ng-switch-when="sun-shower" class="icon sun-shower">
+									<div class="cloud"></div>
+									<div class="sun">
+										<div class="rays"></div>
+									</div>
+									<div class="rain"></div>
+								</div>
+
+								<div ng-switch-when="thunder-storm" class="icon thunder-storm">
+									<div class="cloud"></div>
+									<div class="lightning">
+										<div class="bolt"></div>
+										<div class="bolt"></div>
+									</div>
+								</div>
+
+								<div ng-switch-when="cloudy" class="icon cloudy">
+									<div class="cloud"></div>
+									<div class="cloud"></div>
+								</div>
+
+								<div ng-switch-when="flurries" class="icon flurries">
+									<div class="cloud"></div>
+									<div class="snow">
+										<div class="flake"></div>
+										<div class="flake"></div>
+									</div>
+								</div>
+
+								<div ng-switch-when="sunny" class="icon sunny">
+									<div class="sun">
+										<div class="rays"></div>
+									</div>
+								</div>
+
+								<div ng-switch-when="rainy" class="icon rainy">
+									<div class="cloud"></div>
+									<div class="rain"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<p style="color: white; font-size: 70px; text-align:justify">{{weather.temp}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify">{{weather.forecast}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify">Chance of rain (%): {{weather.precip}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify">Wind: {{weather.wind}}</p>
+						</div>
+					</div>
+					<div class="row">
+						<p class="card-text" style="color: white; margin-top: 2vh; margin-bottom: 2vh; font-size: 30px"> Its cloudy dress warmly you dumb whore. {{weather.message}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="" style="overflow-y:scroll; overflow-x:visible; margin-top:1vh; height:700px;">
+		<div class="row">
+			<div class="card" style="margin-left: 5vw; width: 90vw; margin-top:2vh; background-color: rgba(255, 255, 255, 0.5);" ng-repeat="email in emails">
+				<div class="card-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-9">
+								<p style="color: white; font-size: 50px; text-align:justify">{{email.sender}}</p>
+							</div>
+							<div class="col-xs-3">
+								<p style="color: white; font-size: 50px; text-align:justify">{{email.time}}</p>
+							</div>
+							<p style="color: white; font-size: 50px; text-align:justify; margin:40px;">{{email.subj}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify; margin:40px;">{{email.body}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="" style="overflow-y:scroll; overflow-x:visible;; height:400px;">
+		<div class="row">
+			<div class="card" style="margin-left: 5vw; width: 90vw; margin-top:2vh; background-color: rgba(255, 255, 255, 0.5);" ng-repeat="todo in todos">
+				<div class="card-body">
+					<div class="container-fluid">
+						<div class="row">
+							<p style="color: white; font-size: 50px; text-align:justify">{{todo}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>

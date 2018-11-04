@@ -1,0 +1,17 @@
+{
+  "name": "ui-path",
+  "version": "1.0.0",
+  "description": "A simple weather/text information application based of UIPath weather reading and reporting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vineeth Yeevani",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "firebase": "^5.5.7",
+    "firebase-admin": "^6.1.0"
+  }
+}
