@@ -8,8 +8,13 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
   margin: 0 auto;
+
   font-family: 'Asap', sans-serif;
   text-align: center;
+}
+
+.card {
+    border: 0px;
 }
 
 h1 {

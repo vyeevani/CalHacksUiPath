@@ -3,7 +3,7 @@ var first_angular_cycle = 1;
 angular.module('app.controllers.home', []).controller('homePageController', function($scope, $q, $timeout) {
     $scope.weather = {};
     $scope.emails = {};
-    $scope.todo = {};
+    $scope.todos = {};
 
     if (first_angular_cycle) {
         first_angular_cycle = 0;
@@ -26,8 +26,8 @@ angular.module('app.controllers.home', []).controller('homePageController', func
         todo_listener($scope, $timeout, function(snapshot) {
             fetch_todo($scope, $timeout, function(snapshot) {
                 // Process the data recieved from the server using snapshot.val()
-                $scope.todo = snapshot.val();
-                console.log($scope.todo);
+                $scope.todos = snapshot.val();
+                console.log($scope.todos);
             });
         });
         console.log("Firebase listener registration completed");

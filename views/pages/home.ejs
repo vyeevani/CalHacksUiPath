@@ -16,14 +16,15 @@ window.addEventListener("load",function() {
 </script>
 
 <body ng-app="app" ng-controller="homePageController">
+<p style="color: white; font-size: 70px; margin:0px; margin-bottom: 2vh; margin-top: 2vh; font-family: 'Permanent Marker', cursive;">RISE & SHINE</p>
 <div class="container-fluid">
 	<div class="row">
 		<div class="card" style="margin-left: 5vw; width: 90vw; margin-top:2vh; background-color: rgba(255, 255, 255, 0.5);">
 			<div class="card-body">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-xs-6">
-							<div ng-switch="weather.icon" style="margin-top:4vh;">
+						<div class="col-xs-4">
+							<div ng-switch="weather.icon" style="margin-top:0vh;">
 								<div ng-switch-when="sun-shower" class="icon sun-shower">
 									<div class="cloud"></div>
 									<div class="sun">
@@ -40,9 +41,12 @@ window.addEventListener("load",function() {
 									</div>
 								</div>
 
-								<div ng-switch-when="cloudy" class="icon cloudy">
+								<!-- <div ng-switch-when="cloudy" class="icon cloudy">
 									<div class="cloud"></div>
 									<div class="cloud"></div>
+								</div> -->
+								<div ng-switch-when="cloudy">
+									<img src="img/image.png" style="filter: invert(1);">
 								</div>
 
 								<div ng-switch-when="flurries" class="icon flurries">
@@ -65,11 +69,14 @@ window.addEventListener("load",function() {
 								</div>
 							</div>
 						</div>
-						<div class="col-xs-6">
-							<p style="color: white; font-size: 70px; text-align:justify">{{weather.temp}}</p>
-							<p style="color: white; font-size: 30px; text-align:justify">{{weather.forecast}}</p>
-							<p style="color: white; font-size: 30px; text-align:justify">Chance of rain (%): {{weather.precip}}</p>
-							<p style="color: white; font-size: 30px; text-align:justify">Wind: {{weather.wind}}</p>
+						<div class="col-xs-5">
+							<p style="color: white; font-size: 70px; text-align:justify; margin:0px;">{{weather.city}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify; margin:0px;">{{weather.forecast}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify; margin:0px;">Chance of rain (%): {{weather.precip}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify; margin:0px;">Wind: {{weather.wind}}</p>
+						</div>
+						<div class="col-xs-3">
+							<p style="color: white; font-size: 135px; margin-top:3vh">{{weather.temp}}</p>
 						</div>
 					</div>
 					<div class="row">
@@ -79,33 +86,35 @@ window.addEventListener("load",function() {
 			</div>
 		</div>
 	</div>
-	<div id="" style="overflow-y:scroll; overflow-x:visible; margin-top:1vh; height:700px;">
-		<div class="row">
-			<div class="card" style="margin-left: 5vw; width: 90vw; margin-top:2vh; background-color: rgba(255, 255, 255, 0.5);" ng-repeat="email in emails">
+	<hr style = "margin-left: 3.5vw; width: 90vw; background-color: rgba(255, 255, 255, 0.5); margin-bottom: 2vh;">
+	<div id="" style="overflow-y:scroll; overflow-x:visible; height:600px; margin-bottom:2vh;">
+		<div class="row" ng-repeat="email in emails">
+			<div class="card" style="margin-left: 5vw; width: 90vw; background-color: rgba(255, 255, 255, 0.5);" >
 				<div class="card-body">
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-xs-9">
-								<p style="color: white; font-size: 50px; text-align:justify">{{email.sender}}</p>
+							<div class="col-xs-8">
+								<p style="color: white; font-size: 40px; text-align:justify; margin:13px;"><span style="font-size:20px">From: </span>{{email.sender}}</p>
 							</div>
-							<div class="col-xs-3">
-								<p style="color: white; font-size: 50px; text-align:justify">{{email.time}}</p>
+							<div class="col-xs-4">
+								<p style="color: white; font-size: 40px; text-align:justify; margin:13px;"><span style="font-size:20px">Time: </span>{{email.time}}</p>
 							</div>
-							<p style="color: white; font-size: 50px; text-align:justify; margin:40px;">{{email.subj}}</p>
-							<p style="color: white; font-size: 30px; text-align:justify; margin:40px;">{{email.body}}</p>
+							<p style="color: white; font-size: 30px; text-align:justify; margin:30px; margin-top: 0px;"><span style="font-size:20px">Subject: </span>{{email.subj}}</p>
+							<p style="color: white; font-size: 20px; text-align:justify; margin:30px;">{{email.body}}</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="" style="overflow-y:scroll; overflow-x:visible;; height:400px;">
+	<hr style = "margin-left: 3.5vw; width: 90vw; background-color: rgba(255, 255, 255, 0.5); margin-bottom: 2vh;">
+	<div id="" style="overflow-y:scroll; overflow-x:visible; height:400px;">
 		<div class="row">
-			<div class="card" style="margin-left: 5vw; width: 90vw; margin-top:2vh; background-color: rgba(255, 255, 255, 0.5);" ng-repeat="todo in todos">
+			<div class="card" style="margin-left: 5vw; width: 90vw; background-color: rgba(255, 255, 255, 0.5);" ng-repeat="todo in todos">
 				<div class="card-body">
 					<div class="container-fluid">
 						<div class="row">
-							<p style="color: white; font-size: 50px; text-align:justify">{{todo}}</p>
+							<p style="color: white; font-size: 50px; text-align:justify; margin:40px; margin-top: 0px;">{{todo}}</p>
 						</div>
 					</div>
 				</div>
